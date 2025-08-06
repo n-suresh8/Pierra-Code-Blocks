@@ -1,0 +1,14 @@
+[Unit]
+Description=Start logger on boot
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/popkopy/python-tools/logger.py
+WorkingDirectory=/home/popkopy/python-tools
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=popkopy
+
+[Install]
+WantedBy=multi-user.target
